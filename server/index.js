@@ -15,8 +15,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB (in a real app, use environment variables for the connection string)
-mongoose.connect('mongodb://localhost:27017/virtual-trading')
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
 
